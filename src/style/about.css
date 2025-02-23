@@ -1,0 +1,182 @@
+/* Resetowanie stylów */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	height: 100%;
+	font-family: "Arial", sans-serif;
+	display: flex;
+	flex-direction: column;
+	padding-top: 18px; /* Dostosuj wartość do wysokości Twojego navbara */
+}
+
+/* Tło i overlay */
+.background-overlay {
+	background: url("/assets/4556266-artwork-digital-art-city-futuristic-cyberpunk.jpg")
+		center/cover no-repeat;
+	position: relative; /* Zmiana z absolute na relative */
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh; /* Gwarantuje pełną wysokość ekranu */
+	z-index: -1; /* Tło na niższym poziomie */
+}
+
+/* Overlay dla poprawy czytelności */
+.background-overlay::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+/* Nagłówek */
+.header {
+	text-align: center;
+	padding: 50px;
+	color: white;
+	z-index: 10;
+	position: relative;
+}
+
+.header h1 {
+	font-size: 2.5rem;
+	margin-bottom: 15px;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.header .tagline {
+	font-size: 1.2rem;
+	color: #fff;
+	font-style: italic;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Sekcja opisu aplikacji */
+.app-description {
+	padding: 25px;
+	margin: 40px auto; /* Zwiększony odstęp */
+	width: 80%;
+	max-width: 800px; /* Ograniczona szerokość */
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	color: white;
+	position: relative;
+	z-index: 5;
+}
+
+/* Sekcja o autorze */
+.author {
+	padding: 25px;
+	margin: 40px auto;
+	width: 80%;
+	max-width: 800px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	color: white;
+	position: relative;
+	z-index: 5;
+}
+
+/* Nagłówki sekcji */
+.app-description h2,
+.author h2 {
+	font-size: 2rem;
+	margin-bottom: 15px;
+	color: #00bcd4;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Tekst sekcji */
+.app-description p,
+.author p {
+	font-size: 1.1rem;
+	margin-bottom: 20px;
+	line-height: 1.8;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Stopka */
+.footer {
+	background: rgba(0, 0, 0, 0.7);
+	padding: 25px;
+	border-radius: 10px;
+	color: white;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	font-size: 1rem;
+	width: 100%;
+	margin-top: auto; /* Stopka zawsze na dole */
+	position: relative;
+	z-index: 5;
+}
+
+.footer p {
+	margin: 0;
+	font-size: 0.9rem;
+}
+
+/* Responsywność */
+@media (min-width: 768px) {
+	.app-description,
+	.author {
+		width: 60%;
+	}
+}
+
+.register, .login {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	color: white;
+  }
+  
+  .register h2, .login h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #00bcd4;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .register form, .login form {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .register input, .login input {
+	margin-bottom: 15px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+  }
+  
+  .register button, .login button {
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #00bcd4;
+	color: white;
+	cursor: pointer;
+  }
+  
+  .register button:hover, .login button:hover {
+	background-color: #0097a7;
+  }
+  
+  .error {
+	color: red;
+	text-align: center;
+	margin-top: 10px;
+  }
