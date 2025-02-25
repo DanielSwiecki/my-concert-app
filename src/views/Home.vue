@@ -1,7 +1,12 @@
 <template>
 	<div>
+		<div>
 		<!-- Główna zawartość -->
 		<div class="background-overlay">
+			<video autoplay muted loop class="background-video">
+				<source src="/assets/481483663_9188448917870235_527274161133306753_n.mp4" type="video/mp4" />
+				Twój przeglądarka nie obsługuje tagu wideo.
+			</video>
 			<main class="content text-center">
 				<h1>Poznaj nowych ludzi w swoim mieście</h1>
 				<div class="community-stats d-flex justify-content-center flex-wrap">
@@ -25,6 +30,7 @@
 				</div>
 			</main>
 		</div>
+	</div>
 
 		<!-- Sekcja z kartami -->
 		<section class="expanded-content" id="expanded-content">
@@ -154,7 +160,7 @@ export default {
 			sponsors: [
 				{
 					name: "Coca Cola",
-					image: "/my-concert-app/src/assets/Coca-Cola_logotyp-1024x576.png",
+					image: "/assets/Coca-Cola_logotyp-1024x576.png",
 					link: "https://sponsor1.com",
 				},
 				{
@@ -164,7 +170,7 @@ export default {
 				},
 				{
 					name: "Marshall",
-					image: "/my-concert-app/src/assets/Marshall_logo.svg.png",
+					image: "/assets/Marshall_logo.svg.png",
 					link: "https://sponsor3.com",
 				},
 			],
