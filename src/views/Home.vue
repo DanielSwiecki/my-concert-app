@@ -2,7 +2,10 @@
 	<div>
 		<div class="background-overlay">
 			<video autoplay muted loop class="background-video">
-				<source src="/assets/481483663_9188448917870235_527274161133306753_n.mp4" type="video/mp4" />
+				<source
+					src="/assets/481483663_9188448917870235_527274161133306753_n.mp4"
+					type="video/mp4"
+				/>
 				Twój przeglądarka nie obsługuje tagu wideo.
 			</video>
 			<main class="content text-center">
@@ -22,7 +25,9 @@
 					</div>
 				</div>
 				<div class="scroll-indicator mt-3">
-					<button class="btn btn-outline-light" @click="scrollToEventWeek">&#9660;</button>
+					<button class="btn btn-outline-light" @click="scrollToEventWeek">
+						&#9660;
+					</button>
 				</div>
 			</main>
 		</div>
@@ -31,15 +36,33 @@
 		<section class="expanded-content" id="expanded-content">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 mb-3" v-for="(event, index) in events" :key="index">
-						<a v-if="event.link" :href="event.link" target="_blank" class="card-link">
-							<div class="card text-white bg-dark" :style="{ backgroundImage: `url(${getImagePath(event.image)})` }">
+					<div
+						class="col-md-4 mb-3"
+						v-for="(event, index) in events"
+						:key="index"
+					>
+						<a
+							v-if="event.link"
+							:href="event.link"
+							target="_blank"
+							class="card-link"
+						>
+							<div
+								class="card text-white bg-dark"
+								:style="{
+									backgroundImage: `url(${getImagePath(event.image)})`,
+								}"
+							>
 								<div class="card-body">
 									<p class="card-title">{{ event.name }}</p>
 								</div>
 							</div>
 						</a>
-						<div v-else class="card text-white bg-dark" :style="{ backgroundImage: `url(${getImagePath(event.image)})` }">
+						<div
+							v-else
+							class="card text-white bg-dark"
+							:style="{ backgroundImage: `url(${getImagePath(event.image)})` }"
+						>
 							<div class="card-body">
 								<p class="card-title">{{ event.name }}</p>
 							</div>
@@ -54,11 +77,19 @@
 
 		<!-- Sekcja sponsorów (statyczna) -->
 		<section class="sponsors">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-2 mb-3" v-for="(sponsor, index) in sponsors" :key="index">
+			<div class="">
+				<div class="">
+					<div
+						class="col-md-2 mb-3"
+						v-for="(sponsor, index) in sponsors"
+						:key="index"
+					>
 						<a :href="sponsor.link" target="_blank">
-							<img :src="getImagePath(sponsor.image)" :alt="sponsor.name" class="sponsor-logo img-fluid" />
+							<img
+								:src="getImagePath(sponsor.image)"
+								:alt="sponsor.name"
+								class="sponsor-logo img-fluid"
+							/>
 						</a>
 					</div>
 				</div>
@@ -99,13 +130,8 @@ export default {
 			sponsors: [
 				{
 					name: "Coca Cola",
-					image: "Coca-Cola_logotyp-1024x576.png",
+					image: "sponsos_1.png",
 					link: "https://sponsor1.com",
-				},
-				{
-					name: "Marshall",
-					image: "Marshall_logo.svg.png",
-					link: "https://sponsor3.com",
 				},
 			],
 		};
@@ -125,7 +151,6 @@ export default {
 	},
 };
 </script>
-
 
 <style scoped>
 /* Pozostawiamy style bez zmian */
@@ -164,9 +189,10 @@ export default {
 }
 
 .sponsor-logo {
-	max-width: 100%;
+	max-width: 500%;
 	height: auto;
 	object-fit: contain;
+	margin-left: 150px;
 }
 
 .sponsors .row {
