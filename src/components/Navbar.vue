@@ -61,6 +61,7 @@ export default {
 
           // Sprawdzenie, czy użytkownik to admin
           isAdmin.value = username.value === "Admin" || username.value === "Admin123";
+          console.log("Czy użytkownik jest adminem?", isAdmin.value); // Debugowanie
         }
       }
     };
@@ -70,12 +71,14 @@ export default {
       auth.onAuthStateChanged((user) => {
         if (user) {
           isLoggedIn.value = true;
+          console.log("Użytkownik zalogowany:", user); // Debugowanie
           fetchUsername(user);
         } else {
           isLoggedIn.value = false;
           username.value = "Użytkowniku";
           isAdmin.value = false;
           localStorage.removeItem("username");
+          console.log("Użytkownik wylogowany"); // Debugowanie
         }
       });
     });

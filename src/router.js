@@ -16,7 +16,7 @@ const routes = [
   { path: "/map", component: Map, meta: { requiresAuth: false } },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
-  { path: "/add-event", component: AddEvent, meta: { requiresAuth: true, requiresAdmin: true } }, // Nowa trasa
+  { path: "/add-event", component: AddEvent, meta: { requiresAuth: true, requiresAdmin: true }}
 ];
 
 const router = createRouter({
