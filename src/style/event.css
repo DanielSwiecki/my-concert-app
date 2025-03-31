@@ -1,0 +1,122 @@
+/* event.css */
+/* Tło i overlay */
+.background-overlay {
+	background: url("/assets/4556266-artwork-digital-art-city-futuristic-cyberpunk.jpg")
+		center/cover no-repeat;
+        min-height: 120vh; /* Ustawia wysokość na cały ekran */
+        padding-bottom: 150px; /* Więcej miejsca na dole */
+	z-index: 1; /* Tło na niższym poziomie */
+}
+
+
+
+.add-event {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 40px;
+    margin-bottom: 50px; /* Dodatkowe miejsce na dole */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    color: white;
+    position: relative;
+    z-index: 5;
+}
+
+.add-event h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00bcd4;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.add-event form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.add-event input[type="text"],
+.add-event input[type="number"],
+.add-event textarea,
+.add-event input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.add-event textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.add-event input[type="file"] {
+    padding: 5px;
+}
+
+.add-event button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #00bcd4;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-event button:hover {
+    background-color: #0097a7;
+}
+
+.add-event small {
+    color: #ccc;
+    font-style: italic;
+    margin-top: 5px;
+    display: block;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Dodatkowe style dla paska postępu i podglądu obrazu */
+.progress {
+    margin-top: 10px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    text-align: center;
+    background-color: #00bcd4;
+    transition: width 0.6s ease;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+}

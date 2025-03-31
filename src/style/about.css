@@ -11,7 +11,7 @@ html {
 	font-family: "Arial", sans-serif;
 	display: flex;
 	flex-direction: column;
-	padding-top: 18px; /* Dostosuj wartość do wysokości Twojego navbara */
+
 }
 
 /* Tło i overlay */

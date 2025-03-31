@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getStorage } from "firebase/storage"; // Import Firebase Storage
 
 const firebaseConfig = {
     apiKey: "AIzaSyAZYYNyo0FiPx6iqab1x0mHlFS5rqmaN58",
@@ -16,6 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app) // Export Firebase Storage
 
 // Funkcja do pobierania eventów z Firestore
 const getEventsFromFirestore = async () => {
@@ -27,4 +29,4 @@ const getEventsFromFirestore = async () => {
     }));
 };
 
-export { auth, db, getEventsFromFirestore };
+export { auth, db, getEventsFromFirestore, storage };

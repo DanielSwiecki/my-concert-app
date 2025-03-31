@@ -16,7 +16,11 @@ const routes = [
   { path: "/map", component: Map, meta: { requiresAuth: false } },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
-  { path: "/add-event", component: AddEvent, meta: { requiresAuth: true, requiresAdmin: true }}
+  {
+    path: "/add-event",
+    component: AddEvent,
+    meta: { requiresAuth: true, requiresAdmin: true },
+  },
 ];
 
 const router = createRouter({
@@ -42,7 +46,10 @@ router.beforeEach(async (to, from, next) => {
   const isAuthenticated = auth.currentUser;
 
   // Sprawdzenie, czy użytkownik jest adminem
-  const isAdmin = isAuthenticated && (isAuthenticated.email === "admin@example.com" || isAuthenticated.uid === "admin123");
+  let isAdmin = false;
+  if (isAuthenticated) {
+    isAdmin = isAuthenticated.email === "admin@gmail.com" || isAuthenticated.displayName === "Admin123"; // Zmiana na displayName
+  }
 
   if (requiresAuth && !isAuthenticated) {
     next("/login");
