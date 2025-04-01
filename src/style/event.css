@@ -1,15 +1,13 @@
 /* event.css */
 /* Tło i overlay */
 .background-overlay {
-	background: url("/assets/4556266-artwork-digital-art-city-futuristic-cyberpunk.jpg")
-		center/cover no-repeat;
-        min-height: 120vh; /* Ustawia wysokość na cały ekran */
-        padding-bottom: 150px; /* Więcej miejsca na dole */
-	z-index: 1; /* Tło na niższym poziomie */
+    background: url("/assets/4556266-artwork-digital-art-city-futuristic-cyberpunk.jpg") center/cover no-repeat;
+    min-height: 120vh; /* Ustawia wysokość na cały ekran */
+    padding-bottom: 150px; /* Więcej miejsca na dole */
+    z-index: 1; /* Tło na niższym poziomie */
 }
 
-
-
+/* Formularz dodawania wydarzenia */
 .add-event {
     max-width: 800px;
     margin: 10px auto;
@@ -119,4 +117,51 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     margin-top: 10px;
+}
+
+/* 📌 DODANE: Stylizacja wyboru gatunku muzycznego */
+.genre-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-event select {
+    appearance: none; /* Usuwa domyślne strzałki */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Główna poprawka - styl rozwiniętej listy */
+.add-event select option {
+    background-color: #222; /* Ciemne tło, pasujące do motywu */
+    color: white; /* Biały tekst */
+}
+
+/* Poprawka na hover */
+.add-event select option:hover {
+    background-color: #00bcd4; /* Akcent kolorystyczny */
+}
+
+/* Styl pola tekstowego dla własnego gatunku */
+.add-event input[type="text"].custom-genre {
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
