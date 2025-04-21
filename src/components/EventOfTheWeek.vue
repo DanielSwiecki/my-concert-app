@@ -207,5 +207,9 @@
 	max-height: 250px;
 	object-fit: cover;
   }
+  .form-check-input:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
   </style>
   

@@ -76,37 +76,23 @@
 		</section>
 
 		<!-- Sekcja sponsorów (statyczna) -->
-		<section class="sponsors">
-			<div class="">
-				<div class="">
-					<div
-						class="col-md-2 mb-3"
-						v-for="(sponsor, index) in sponsors"
-						:key="index"
-					>
-						<a :href="sponsor.link" target="_blank">
-							<img
-								:src="getImagePath(sponsor.image)"
-								:alt="sponsor.name"
-								class="sponsor-logo img-fluid"
-							/>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
+	<Footer />
+		
 	</div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
 import EventOfTheWeek from "../components/EventOfTheWeek.vue";
+import Footer from "../components/Footer.vue";
+
 
 export default {
 	name: "Home",
 	components: {
 		Navbar,
 		EventOfTheWeek,
+		Footer,
 	},
 	data() {
 		return {
