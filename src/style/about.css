@@ -6,7 +6,7 @@
 }
 
 body,
-html {
+.dark html {
 	height: 100%;
 	font-family: "Arial", sans-serif;
 	display: flex;
@@ -15,7 +15,7 @@ html {
 }
 
 /* Tło i overlay */
-.background-overlay {
+.dark .background-overlay {
 	background: url("/assets/4556266-artwork-digital-art-city-futuristic-cyberpunk.jpg")
 		center/cover no-repeat;
 	position: relative; /* Zmiana z absolute na relative */
@@ -27,7 +27,7 @@ html {
 }
 
 /* Overlay dla poprawy czytelności */
-.background-overlay::after {
+.dark .background-overlay::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -38,7 +38,7 @@ html {
 }
 
 /* Nagłówek */
-.header {
+.dark .header {
 	text-align: center;
 	padding: 50px;
 	color: white;
@@ -46,13 +46,13 @@ html {
 	position: relative;
 }
 
-.header h1 {
+.dark .header h1 {
 	font-size: 2.5rem;
 	margin-bottom: 15px;
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.header .tagline {
+.dark .header .tagline {
 	font-size: 1.2rem;
 	color: #fff;
 	font-style: italic;
@@ -60,7 +60,7 @@ html {
 }
 
 /* Sekcja opisu aplikacji */
-.app-description {
+.dark .app-description {
 	padding: 25px;
 	margin: 40px auto; /* Zwiększony odstęp */
 	width: 80%;
@@ -74,7 +74,7 @@ html {
 }
 
 /* Sekcja o autorze */
-.author {
+.dark .author {
 	padding: 25px;
 	margin: 40px auto;
 	width: 80%;
@@ -89,7 +89,7 @@ html {
 
 /* Nagłówki sekcji */
 .app-description h2,
-.author h2 {
+.dark .author h2 {
 	font-size: 2rem;
 	margin-bottom: 15px;
 	color: #00bcd4;
@@ -98,7 +98,7 @@ html {
 
 /* Tekst sekcji */
 .app-description p,
-.author p {
+.dark .author p {
 	font-size: 1.1rem;
 	margin-bottom: 20px;
 	line-height: 1.8;
@@ -106,7 +106,7 @@ html {
 }
 
 /* Stopka */
-.footer {
+.dark .footer {
 	background: rgba(0, 0, 0, 0.7);
 	padding: 25px;
 	border-radius: 10px;
@@ -120,7 +120,7 @@ html {
 	z-index: 5;
 }
 
-.footer p {
+.dark .footer p {
 	margin: 0;
 	font-size: 0.9rem;
 }
@@ -128,12 +128,12 @@ html {
 /* Responsywność */
 @media (min-width: 768px) {
 	.app-description,
-	.author {
+.dark .author {
 		width: 60%;
 	}
 }
 
-.register, .login {
+.dark .register, .login {
 	max-width: 400px;
 	margin: 50px auto;
 	padding: 20px;
@@ -143,26 +143,26 @@ html {
 	color: white;
   }
   
-  .register h2, .login h2 {
+.dark .register h2, .login h2 {
 	text-align: center;
 	margin-bottom: 20px;
 	color: #00bcd4;
 	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   }
   
-  .register form, .login form {
+.dark .register form, .login form {
 	display: flex;
 	flex-direction: column;
   }
   
-  .register input, .login input {
+.dark .register input, .login input {
 	margin-bottom: 15px;
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
   }
   
-  .register button, .login button {
+.dark .register button, .login button {
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
@@ -171,11 +171,194 @@ html {
 	cursor: pointer;
   }
   
-  .register button:hover, .login button:hover {
+.dark .register button:hover, .login button:hover {
 	background-color: #0097a7;
   }
   
-  .error {
+.dark .error {
+	color: red;
+	text-align: center;
+	margin-top: 10px;
+  }
+
+/* Resetowanie stylów */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+.light html {
+	height: 100%;
+	font-family: "Arial", sans-serif;
+	display: flex;
+	flex-direction: column;
+
+}
+
+/* Tło i overlay */
+.light .background-overlay {
+	background: url("/assets/4556266-artwork-digital-art-city-futuristic-cyberpunk.jpg")
+		center/cover no-repeat;
+	position: relative; /* Zmiana z absolute na relative */
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh; /* Gwarantuje pełną wysokość ekranu */
+	z-index: -1; /* Tło na niższym poziomie */
+}
+
+/* Overlay dla poprawy czytelności */
+.light .background-overlay::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+/* Nagłówek */
+.light .header {
+	text-align: center;
+	padding: 50px;
+	color: white;
+	z-index: 10;
+	position: relative;
+}
+
+.light .header h1 {
+	font-size: 2.5rem;
+	margin-bottom: 15px;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.light .header .tagline {
+	font-size: 1.2rem;
+	color: #fff;
+	font-style: italic;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Sekcja opisu aplikacji */
+.light .app-description {
+	padding: 25px;
+	margin: 40px auto; /* Zwiększony odstęp */
+	width: 80%;
+	max-width: 800px; /* Ograniczona szerokość */
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	color: white;
+	position: relative;
+	z-index: 5;
+}
+
+/* Sekcja o autorze */
+.light .author {
+	padding: 25px;
+	margin: 40px auto;
+	width: 80%;
+	max-width: 800px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	color: white;
+	position: relative;
+	z-index: 5;
+}
+
+/* Nagłówki sekcji */
+.app-description h2,
+.light .author h2 {
+	font-size: 2rem;
+	margin-bottom: 15px;
+	color: #00bcd4;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Tekst sekcji */
+.app-description p,
+.light .author p {
+	font-size: 1.1rem;
+	margin-bottom: 20px;
+	line-height: 1.8;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Stopka */
+.light .footer {
+	background: rgba(0, 0, 0, 0.7);
+	padding: 25px;
+	border-radius: 10px;
+	color: white;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	font-size: 1rem;
+	width: 100%;
+	margin-top: auto; /* Stopka zawsze na dole */
+	position: relative;
+	z-index: 5;
+}
+
+.light .footer p {
+	margin: 0;
+	font-size: 0.9rem;
+}
+
+/* Responsywność */
+@media (min-width: 768px) {
+	.app-description,
+.light .author {
+		width: 60%;
+	}
+}
+
+.light .register, .login {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	color: white;
+  }
+  
+.light .register h2, .login h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #00bcd4;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+.light .register form, .login form {
+	display: flex;
+	flex-direction: column;
+  }
+  
+.light .register input, .login input {
+	margin-bottom: 15px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+  }
+  
+.light .register button, .login button {
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #00bcd4;
+	color: white;
+	cursor: pointer;
+  }
+  
+.light .register button:hover, .login button:hover {
+	background-color: #0097a7;
+  }
+  
+.light .error {
 	color: red;
 	text-align: center;
 	margin-top: 10px;

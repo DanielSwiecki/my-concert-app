@@ -1,8 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    doc,
+    updateDoc,
+    arrayUnion,
+    arrayRemove,
+    increment
+  } from "firebase/firestore";
 import { getStorage } from "firebase/storage"; // Import Firebase Storage
-
+// Konfiguracja Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyAZYYNyo0FiPx6iqab1x0mHlFS5rqmaN58",
     authDomain: "concert-25b85.firebaseapp.com",
@@ -29,4 +38,30 @@ const getEventsFromFirestore = async () => {
     }));
 };
 
-export { auth, db, getEventsFromFirestore, storage };
+// Polub event
+const likeEvent = async (eventId, userId) => {
+    const eventRef = doc(db, "events", eventId);
+    await updateDoc(eventRef, {
+      likedBy: arrayUnion(userId),
+      likes: increment(1)
+    });
+  };
+  
+  // Cofnij polubienie
+  const unlikeEvent = async (eventId, userId) => {
+    const eventRef = doc(db, "events", eventId);
+    await updateDoc(eventRef, {
+      likedBy: arrayRemove(userId),
+      likes: increment(-1)
+    });
+  };
+  
+  // Eksport
+  export {
+    auth,
+    db,
+    storage,
+    getEventsFromFirestore,
+    likeEvent,
+    unlikeEvent
+  };
