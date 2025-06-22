@@ -33,6 +33,10 @@
           <li class="nav-item" v-if="isAdmin">
             <router-link :class="['nav-link', theme === 'dark' ? 'text-light' : 'text-dark']" to="/add-event">Dodaj Event</router-link>
           </li>
+          <li class="nav-item" v-if="isAdmin">
+            <router-link :class="['nav-link', theme === 'dark' ? 'text-light' : 'text-dark']" to="/ecr-diagram">Diagram ECR</router-link>
+          </li>
+          
           <li class="nav-item">
             <a
               v-if="isLoggedIn"

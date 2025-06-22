@@ -9,6 +9,8 @@ const Map = () => import("./views/Map.vue");
 const Login = () => import("./views/Login.vue");
 const Register = () => import("./views/Register.vue");
 const AddEvent = () => import("./views/AddEvent.vue"); // Dodajemy nowy komponent
+const ECRDiagram = () => import("./views/ECRDiagram.vue");
+
 
 const routes = [
   { path: "/", component: Home },
@@ -17,10 +19,17 @@ const routes = [
   { path: "/login", component: Login },
   { path: "/register", component: Register },
   {
+    path: "/ecr-diagram",
+    component: ECRDiagram,
+    meta: { requiresAuth: true, requiresAdmin: true },
+  },
+  {
     path: "/add-event",
     component: AddEvent,
     meta: { requiresAuth: true, requiresAdmin: true },
   },
+ 
+
 ];
 
 const router = createRouter({
